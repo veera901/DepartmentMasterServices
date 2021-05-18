@@ -16,7 +16,7 @@ import com.departmentmasterservices.repository.DepartmentRepository;
 import com.departmentmasterservices.services.DepartmentMasterImpl;
 
 @RestController
-@RequestMapping("/api/departmentmasterservices/department")
+@RequestMapping("/api/department")
 
 public class DepartmentController {
 	@Autowired
@@ -27,7 +27,7 @@ public class DepartmentController {
 	
 	@PostMapping("/add")
 	public ResponseEntity<String> createDepartment(@RequestBody Department depart) {
-		if(!repo.existsById(depart.getId())) {
+		if(!repo.existsById(depart.getD_id())) {
 			departmentMasterImpl.createDepartment(depart);
 			return new ResponseEntity<String>("Saved Successflyy",HttpStatus.ACCEPTED);
 		}

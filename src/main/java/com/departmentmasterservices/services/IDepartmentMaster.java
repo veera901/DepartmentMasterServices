@@ -7,7 +7,7 @@ import com.departmentmasterservices.entities.Department;
 
 
 public interface IDepartmentMaster {
-public Department createDepartment(Department department) ;
+    public Department createDepartment(Department department) ;
 	
 	public Department updateDepartment(Department department);
 	

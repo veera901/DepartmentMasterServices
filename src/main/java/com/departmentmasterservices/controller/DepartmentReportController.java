@@ -1,5 +1,7 @@
 package com.departmentmasterservices.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,23 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.departmentmasterservices.entities.Department;
+import com.departmentmasterservices.entities.DepartmentReport;
+import com.departmentmasterservices.repository.DeparmentReportRepository;
 import com.departmentmasterservices.repository.DepartmentRepository;
 import com.departmentmasterservices.services.DepartmentMasterImpl;
+import com.departmentmasterservices.services.DepartmentReportImpl;
 
 @RestController
-@RequestMapping("/api/departmentmasterservices/departmentreport")
+@RequestMapping("/api/departmentreport")
 
 public class DepartmentReportController {
 	@Autowired
-	private DepartmentMasterImpl departmentMasterImpl;
+	private DepartmentReportImpl service;
 	
 	@Autowired
-	private DepartmentRepository repo;
+	private DeparmentReportRepository repo;
 	
 	@PostMapping("/add")
-	public ResponseEntity<String> createDepartment(@RequestBody Department depart) {
-		if(!repo.existsById(depart.getId())) {
-			departmentMasterImpl.createDepartment(depart);
+	public ResponseEntity<String> createDepartment(@RequestBody DepartmentReport depart) {
+		if(!repo.existsById(depart.getDreport_id())) {
+			service.createDepartmentReport(depart);
 			return new ResponseEntity<String>("Saved Successflyy",HttpStatus.ACCEPTED);
 		}
 		else {
@@ -61,7 +66,7 @@ public class DepartmentReportController {
 		}
 }
 	@GetMapping("/getall")
-	public java.util.List<Department> getall(){
+	public List<DepartmentReport> getall(){
 		return repo.findAll();
 	}
 

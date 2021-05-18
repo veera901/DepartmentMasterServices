@@ -12,8 +12,8 @@ public class DepartmentReport {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String name;
-	private String Description;
+	private int dreport_id;
+	private String dreport_name;
+	private String dreport_Description;
 
 }
