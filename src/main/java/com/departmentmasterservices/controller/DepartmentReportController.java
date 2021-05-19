@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.departmentmasterservices.entities.Department;
 import com.departmentmasterservices.entities.DepartmentReport;
 import com.departmentmasterservices.repository.DeparmentReportRepository;
-import com.departmentmasterservices.repository.DepartmentRepository;
-import com.departmentmasterservices.services.DepartmentMasterImpl;
 import com.departmentmasterservices.services.DepartmentReportImpl;
 
 @RestController

@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.departmentmasterservices.entities.Department;
 import com.departmentmasterservices.entities.DepartmentReport;
 import com.departmentmasterservices.repository.DeparmentReportRepository;
 @Service

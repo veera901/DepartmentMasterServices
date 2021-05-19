@@ -17,8 +17,7 @@ public class DepartmentMasterImpl implements IDepartmentMaster {
 	private DepartmentRepository repo;
       @Override
 	public Department createDepartment(Department department) {
-	
-		return repo.save(department);
+	   return repo.save(department);
 	}
     @Override
 	public Department updateDepartment(Department department) {
